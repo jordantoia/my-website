@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['i.vimeocdn.com'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'vumbnail.com' },
+      { protocol: 'https', hostname: 'i.vimeocdn.com' },
+    ],
   },
 }
 
