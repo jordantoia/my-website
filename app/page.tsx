@@ -244,51 +244,55 @@ function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-5 py-4 md:py-5 flex items-center justify-between gap-4">
         {/* Left — name & role */}
-        <div className="flex items-baseline gap-5">
-          <h1 className="text-2xl font-display font-700 tracking-tight text-avo-cream leading-none">
+        <div className="flex items-baseline gap-3 md:gap-5 min-w-0">
+          <h1 className="text-xl md:text-2xl font-display font-700 tracking-tight text-avo-cream leading-none whitespace-nowrap">
             Jordan Toia
           </h1>
-          <span className="hidden md:block text-xs font-body font-400 tracking-[0.25em] uppercase text-avo-dim">
+          <span className="hidden md:block text-xs font-body font-400 tracking-[0.25em] uppercase text-avo-dim whitespace-nowrap">
             Director · DOP · Editor
           </span>
         </div>
 
         {/* Right — contact block */}
-        <nav className="flex flex-col items-end gap-2.5">
-          {/* Row 1 — availability status */}
-          <div className="flex items-center gap-2">
+        <nav className="flex flex-col items-end gap-2 shrink-0">
+          {/* Row 1 — availability — hidden on mobile */}
+          <div className="hidden md:flex items-center gap-2">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-avo-flesh opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-avo-flesh" />
             </span>
-            <span className="text-[11px] font-body tracking-[0.3em] uppercase text-avo-flesh">
+            <span className="text-[11px] font-body tracking-[0.3em] uppercase text-avo-flesh whitespace-nowrap">
               Available for Work
             </span>
           </div>
 
-          {/* Row 2 — phone · email · button */}
-          <div className="flex items-center gap-4">
+          {/* Row 2 — details scale with breakpoint */}
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Phone — desktop only */}
             <a
               href="tel:+61448174270"
               data-cursor="CALL"
-              className="text-sm font-body text-avo-cream/70 hover:text-avo-cream transition-colors duration-300 tracking-wide"
+              className="hidden lg:block text-sm font-body text-avo-cream/70 hover:text-avo-cream transition-colors duration-300 tracking-wide whitespace-nowrap"
             >
               +61 448 174 270
             </a>
-            <span className="w-px h-4 bg-avo-border" />
+            <span className="hidden lg:block w-px h-4 bg-avo-border" />
+            {/* Email — tablet+ */}
             <a
               href="mailto:jordan@zoomfilmtv.com.au"
               data-cursor="EMAIL"
-              className="text-sm font-body text-avo-cream/70 hover:text-avo-cream transition-colors duration-300 tracking-wide"
+              className="hidden md:block text-sm font-body text-avo-cream/70 hover:text-avo-cream transition-colors duration-300 tracking-wide whitespace-nowrap"
             >
               jordan@zoomfilmtv.com.au
             </a>
+            <span className="hidden md:block w-px h-4 bg-avo-border" />
+            {/* Contact button — always visible */}
             <a
               href="mailto:jordan@zoomfilmtv.com.au"
               data-cursor="EMAIL"
-              className="flex items-center px-6 py-2 rounded-full bg-avo-flesh text-avo-black text-xs font-body font-600 tracking-[0.12em] uppercase hover:bg-avo-cream transition-colors duration-300"
+              className="flex items-center px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-avo-flesh text-avo-black text-xs font-body font-600 tracking-[0.12em] uppercase hover:bg-avo-cream transition-colors duration-300 whitespace-nowrap"
             >
               Contact
             </a>
@@ -309,12 +313,12 @@ function HeroSection({ activeVideo }: { activeVideo: ActiveVideo }) {
   const isShowreel = activeVideo.id === showreel.id
 
   return (
-    <section ref={sectionRef} className="relative pt-28 pb-16 px-6">
+    <section ref={sectionRef} className="relative pt-20 md:pt-28 pb-10 md:pb-16 px-5 md:px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* Top meta row */}
         <motion.div
-          className="flex items-center justify-between mb-8"
+          className="flex items-center justify-between mb-5 md:mb-8"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -337,7 +341,7 @@ function HeroSection({ activeVideo }: { activeVideo: ActiveVideo }) {
           <AnimatePresence mode="wait">
             <motion.span
               key={activeVideo.id}
-              className="text-[10px] font-body tracking-[0.2em] uppercase text-avo-dim max-w-xs text-right truncate"
+              className="text-[10px] font-body tracking-[0.2em] uppercase text-avo-dim max-w-[140px] md:max-w-xs text-right truncate"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -349,9 +353,9 @@ function HeroSection({ activeVideo }: { activeVideo: ActiveVideo }) {
         </motion.div>
 
         {/* Large display title */}
-        <div className="overflow-hidden mb-8">
+        <div className="overflow-hidden mb-5 md:mb-8">
           <motion.h2
-            className="text-[clamp(2.5rem,7vw,6rem)] font-display font-800 tracking-tight leading-[0.9] text-avo-cream"
+            className="text-[clamp(2.8rem,10vw,6rem)] font-display font-800 tracking-tight leading-[0.9] text-avo-cream"
             initial={{ y: '105%' }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -418,7 +422,7 @@ function PortfolioGrid({
   const isInView = useInView(headingRef, { once: true, margin: '-80px' })
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-12 md:py-20 px-5 md:px-6">
       <div className="max-w-7xl mx-auto">
 
         <div ref={headingRef} className="relative flex items-end justify-between mb-10">
@@ -459,7 +463,7 @@ function PortfolioGrid({
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
           {portfolioVideos.map((video, index) => (
             <VideoCard
               key={video.id ?? video.url}
