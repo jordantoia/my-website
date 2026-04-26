@@ -221,7 +221,7 @@
     }
 
     /* ═══════════════════════════════════════════
-       INTRO — single cream opening frame
+       INTRO
     ═══════════════════════════════════════════ */
     #intro {
       background: var(--cream);
@@ -231,7 +231,6 @@
       padding-top: calc(clamp(56px, 8vh, 80px) + 70px);
     }
 
-    /* Landing logo */
     .landing-logo-block {
       display: flex;
       align-items: flex-end;
@@ -273,14 +272,12 @@
       color: var(--muted-light);
     }
 
-    /* Hero colours on cream */
     .hero-title .ghost { color: rgba(0,0,0,0.06); }
     .hero-title .solid { color: var(--ink); }
     .hero-name         { color: var(--ink); }
     .hero-sep          { background: rgba(0,0,0,0.15); }
     .hero-role         { color: rgba(0,0,0,0.4); }
 
-    /* Divider between intro and situation content */
     .intro-divider {
       border: none;
       border-top: 1px solid var(--border-light);
@@ -456,7 +453,204 @@
     }
 
     /* ═══════════════════════════════════════════
-       SECTION: WEEKLY STRUCTURE
+       SECTION: STRUCTURED BRANDING (03)
+    ═══════════════════════════════════════════ */
+    #branding {
+      background: var(--dark);
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .branding-headline {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(52px, 8vw, 112px);
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .branding-sub {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.38);
+      max-width: 520px;
+      margin-bottom: 64px;
+    }
+
+    /* Instagram embed block */
+    .ig-block {
+      margin-bottom: 64px;
+    }
+    .ig-block-label {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+    .ig-embed-wrap {
+      border: 1px solid var(--border-dark);
+      background: var(--dark-2);
+      overflow: hidden;
+      max-width: 480px;
+    }
+    .ig-embed-wrap iframe {
+      width: 100%;
+      min-height: 480px;
+      border: none;
+      display: block;
+    }
+    .ig-caption {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.04em;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    /* Reference carousel */
+    .carousel-section { }
+    .carousel-label {
+      font-size: 12px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.35);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      cursor: grab;
+      padding-bottom: 4px;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-track.dragging { cursor: grabbing; }
+    .carousel-card {
+      scroll-snap-align: start;
+      flex: 0 0 320px;
+      height: 480px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-dark);
+    }
+    @media (min-width: 600px) {
+      .carousel-card { flex: 0 0 380px; }
+    }
+    .carousel-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .carousel-card:hover img { transform: scale(1.04); }
+    .carousel-card-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 20px 18px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+    }
+    .carousel-card-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+    .carousel-card-followers {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-top: 3px;
+    }
+    .carousel-hint {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.15);
+      margin-top: 16px;
+      text-align: right;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION: PRODUCTION PHILOSOPHY (04)
+    ═══════════════════════════════════════════ */
+    #philosophy {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .phil-headline {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(64px, 10vw, 136px);
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .phil-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
+      font-style: italic;
+      margin-bottom: 64px;
+    }
+    .phil-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-dark);
+      margin-bottom: 60px;
+    }
+    .phil-col {
+      background: var(--dark);
+      padding: 36px 32px 40px;
+    }
+    .phil-col-label {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .phil-col p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.5);
+    }
+    .phil-statement {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 64px);
+      text-transform: uppercase;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .phil-statement .accent { color: var(--orange); }
+    .phil-body {
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.28);
+      max-width: 680px;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION: WEEKLY STRUCTURE (05)
     ═══════════════════════════════════════════ */
     #structure {
       background: var(--cream);
@@ -498,6 +692,73 @@
       margin-top: 4px;
     }
 
+    /* Tier cards */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border: 1px solid var(--border-light);
+      margin-bottom: 52px;
+    }
+    .tier-card {
+      background: var(--cream);
+      padding: 28px 24px 32px;
+      position: relative;
+    }
+    .tier-card.recommended {
+      background: var(--cream-2);
+      border-top: 3px solid var(--orange);
+    }
+    .tier-card.recommended::before {
+      content: 'Recommended';
+      position: absolute;
+      top: -1px; right: 20px;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--orange);
+      padding: 3px 9px;
+    }
+    .tier-badge {
+      display: inline-block;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid rgba(217,122,58,0.28);
+      padding: 3px 8px;
+      margin-bottom: 14px;
+    }
+    .tier-days {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(36px, 4vw, 52px);
+      text-transform: uppercase;
+      line-height: 1.0;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .tier-hrs {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .tier-desc {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: #555550;
+    }
+
+    /* Day grid */
     .days-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -547,6 +808,7 @@
       border-bottom: 2px solid var(--orange);
       margin-bottom: 18px;
     }
+
     .day-tasks li {
       font-size: 12px;
       line-height: 1.6;
@@ -580,7 +842,7 @@
     }
 
     /* ═══════════════════════════════════════════
-       SECTION: YOUTUBE
+       SECTION: YOUTUBE (06)
     ═══════════════════════════════════════════ */
     #youtube {
       background: var(--dark);
@@ -640,8 +902,98 @@
       margin-top: 2px;
     }
 
+    /* YouTube data block */
+    .yt-data-block {
+      margin-top: 72px;
+      padding-top: 56px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .yt-data-insight {
+      font-size: 13px;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.03em;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .yt-data-insight em {
+      color: var(--orange);
+      font-style: normal;
+    }
+    .yt-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-display);
+    }
+    .yt-data-table th {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      text-align: left;
+      padding: 10px 16px 10px 0;
+      border-bottom: 1px solid var(--border-dark);
+      font-family: var(--font-body);
+    }
+    .yt-data-table td {
+      padding: 12px 16px 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: middle;
+    }
+    .yt-data-table tr:last-of-type td { border-bottom: none; }
+    .yt-td-channel {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.7);
+    }
+    .yt-td-subs {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+    .yt-td-rev {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      white-space: nowrap;
+    }
+    /* Saint projection row */
+    .yt-data-table tr.saint-row td {
+      background: rgba(217,122,58,0.08);
+      border-top: 1px solid rgba(217,122,58,0.25);
+      border-bottom: 1px solid rgba(217,122,58,0.25);
+    }
+    .yt-data-table tr.saint-row .yt-td-channel { color: var(--orange); }
+    .yt-data-table tr.saint-row .yt-td-subs    { color: var(--orange); }
+    .yt-data-table tr.saint-row .yt-td-rev     { color: rgba(217,122,58,0.7); }
+    .yt-projection-label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--orange);
+      opacity: 0.6;
+      margin-bottom: 4px;
+    }
+    .yt-data-close {
+      font-size: 12px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.28);
+      margin-top: 24px;
+      font-style: italic;
+    }
+    .yt-data-close em {
+      color: rgba(255,255,255,0.5);
+      font-style: normal;
+    }
+
     /* ═══════════════════════════════════════════
-       SECTION: REFERENCES
+       SECTION: REFERENCES (07)
     ═══════════════════════════════════════════ */
     #references {
       background: var(--dark-2);
@@ -730,7 +1082,7 @@
     }
 
     /* ═══════════════════════════════════════════
-       SECTION: ENGAGEMENT
+       SECTION: ENGAGEMENT (08)
     ═══════════════════════════════════════════ */
     #engagement {
       background: var(--dark);
@@ -766,91 +1118,79 @@
       line-height: 1.9;
       color: rgba(255,255,255,0.35);
       max-width: 480px;
-    }
-    .eng-rate {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-dark);
-    }
-    .eng-rate-label {
-      font-size: 9.5px;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-    }
-    .eng-rate-value {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: 0.03em;
-      color: var(--cream);
+      margin-bottom: 36px;
     }
 
-    /* Salary calculation breakdown */
-    .eng-calc {
-      margin-top: 28px;
-      border-top: 1px solid var(--border-dark);
-      padding-top: 24px;
+    /* Three-tier rate cards */
+    .eng-tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-dark);
+      margin-top: 8px;
     }
-    .calc-group { margin-bottom: 4px; }
-    .calc-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 24px;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+    .eng-tier {
+      background: var(--dark-2);
+      padding: 24px 22px 28px;
+      position: relative;
     }
-    .calc-row:last-child { border-bottom: none; }
-    .calc-label {
-      font-size: 9.5px;
-      font-weight: 600;
-      letter-spacing: 0.28em;
+    .eng-tier.highlighted {
+      background: var(--dark-3);
+      border-top: 2px solid var(--orange);
+    }
+    .eng-tier.highlighted::before {
+      content: 'Recommended';
+      position: absolute;
+      top: -1px; right: 16px;
+      font-size: 7.5px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
+      background: var(--orange);
+      color: #fff;
+      padding: 3px 8px;
     }
-    .calc-val {
+    .eng-tier-days {
       font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.5);
-      white-space: nowrap;
+      font-weight: 900;
+      font-size: 36px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 4px;
     }
-    .calc-row.total .calc-label { color: rgba(255,255,255,0.5); }
-    .calc-row.total .calc-val   { color: var(--cream); font-size: 18px; font-weight: 700; }
-    .calc-row.highlight .calc-label { color: var(--orange); opacity: 0.7; }
-    .calc-row.highlight .calc-val   { color: var(--orange); }
-    .calc-divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin: 10px 0;
-    }
-    .calc-hourly {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-dark);
-    }
-    .calc-hourly .label {
+    .eng-tier.highlighted .eng-tier-days { color: var(--orange); }
+    .eng-tier-hrs {
       font-size: 9.5px;
       font-weight: 600;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-dark);
     }
-    .calc-hourly .rate {
+    .eng-tier-weekly {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 22px;
+      font-size: 20px;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+    .eng-tier.highlighted .eng-tier-weekly { color: var(--orange); }
+    .eng-tier-after-tax {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
       letter-spacing: 0.04em;
-      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    .eng-tier-hourly {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
     }
 
     .presenter {
@@ -897,7 +1237,6 @@
     }
     .presenter-phone:hover { color: var(--orange); }
 
-    /* Bottom strip */
     .eng-strip {
       margin-top: 88px;
       padding-top: 22px;
@@ -968,32 +1307,15 @@
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       max-width: 100%;
     }
-    #modal-overlay.open .modal-box {
-      transform: none;
-    }
-    /* portrait = Instagram reels */
-    .modal-box.portrait {
-      width: min(400px, 90vw);
-      height: min(700px, 80vh);
-    }
-    /* landscape = Vimeo / web */
-    .modal-box.landscape {
-      width: min(960px, 92vw);
-      aspect-ratio: 16/9;
-    }
-    .modal-box iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
+    #modal-overlay.open .modal-box { transform: none; }
+    .modal-box.portrait  { width: min(400px, 90vw); height: min(700px, 80vh); }
+    .modal-box.landscape { width: min(960px, 92vw); aspect-ratio: 16/9; }
+    .modal-box iframe { width: 100%; height: 100%; border: none; display: block; }
     .modal-close {
       position: absolute;
-      top: 12px;
-      right: 12px;
+      top: 12px; right: 12px;
       z-index: 10;
-      width: 32px;
-      height: 32px;
+      width: 32px; height: 32px;
       border-radius: 50%;
       background: rgba(0,0,0,0.6);
       border: 1px solid rgba(255,255,255,0.1);
@@ -1015,9 +1337,12 @@
       .gap-grid,
       .brand-grid,
       .yt-grid,
-      .eng-grid   { grid-template-columns: 1fr; }
+      .eng-grid,
+      .phil-cols    { grid-template-columns: 1fr; }
 
-      .days-grid  { grid-template-columns: repeat(2, 1fr); }
+      .tier-grid    { grid-template-columns: 1fr; }
+      .eng-tiers    { grid-template-columns: 1fr; }
+      .days-grid    { grid-template-columns: repeat(2, 1fr); }
 
       .structure-top { flex-direction: column; align-items: flex-start; }
       .ref-top       { flex-direction: column; align-items: flex-start; }
@@ -1030,7 +1355,6 @@
       .days-grid    { grid-template-columns: 1fr; }
       .hero-meta    { flex-direction: column; align-items: flex-start; gap: 6px; }
       .hero-sep     { display: none; }
-      .eng-rate     { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
 
   </style>
@@ -1045,11 +1369,10 @@
     <span class="nav-right">Creative Lead Proposal</span>
   </nav>
 
-  <!-- ─────────────────── INTRO ─────────────────── -->
+  <!-- ─────────────────── 01 / CURRENT SITUATION ─────────────────── -->
   <section id="intro" aria-labelledby="gap-heading">
     <div class="container">
 
-      <!-- Landing logo -->
       <div class="landing-logo-block">
         <img class="landing-logo" src="/saint-pitch/assets/saint-logo-wing.png" alt="Sa1nt" />
         <div class="landing-logo-meta">
@@ -1059,7 +1382,6 @@
         </div>
       </div>
 
-      <!-- Current situation -->
       <p class="section-label on-light reveal">01 / Current Situation</p>
       <h2 class="gap-statement reveal" id="gap-heading">
         All the raw material.<br/>
@@ -1095,7 +1417,7 @@
     </div>
   </section>
 
-  <!-- ─────────────────── BRAND STRATEGY ─────────────────── -->
+  <!-- ─────────────────── 02 / BRAND STRATEGY ─────────────────── -->
   <section id="strategy" aria-labelledby="strategy-heading">
     <div class="container">
       <p class="section-label reveal">02 / Brand Strategy</p>
@@ -1134,19 +1456,141 @@
     </div>
   </section>
 
-  <!-- ─────────────────── WEEKLY STRUCTURE ─────────────────── -->
-  <section id="structure" aria-labelledby="structure-heading">
+  <!-- ─────────────────── 03 / STRUCTURED BRANDING ─────────────────── -->
+  <section id="branding" aria-labelledby="branding-heading">
     <div class="container">
-      <p class="section-label on-light reveal">03 / Proposed Structure</p>
-      <div class="structure-top reveal">
-        <h2 class="structure-headline" id="structure-heading">
-          32 Hours.<br/>4 Days.
-        </h2>
-        <div class="structure-kpi" aria-hidden="true">
-          <div class="big">32</div>
-          <div class="label">Hours / Week</div>
+      <p class="section-label reveal">03 / Structured Branding</p>
+      <h2 class="branding-headline reveal" id="branding-heading">
+        Recognisable<br/>in 0.3 seconds.
+      </h2>
+      <p class="branding-sub reveal">
+        The algorithm puts you in front of strangers. Brand structure makes them stop.
+      </p>
+
+      <!-- Part A — Instagram embed -->
+      <div class="ig-block reveal">
+        <p class="ig-block-label">Sa1nt — Content Mock-ups</p>
+        <div class="ig-embed-wrap">
+          <iframe
+            src="https://www.instagram.com/pitch.sa1nt/embed"
+            scrolling="no"
+            allowtransparency="true"
+            frameborder="0"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <p class="ig-caption">Structured content identity across Saint Layers and Saint Unbreakable — built before a single real shoot.</p>
+      </div>
+
+      <!-- Part B — Reference carousel -->
+      <div class="carousel-section reveal">
+        <p class="carousel-label">
+          These accounts weaponise consistent post structure to compound follower growth year on year.
+          Instantly recognisable in any feed, on any device.
+        </p>
+        <div class="carousel-track" id="carousel">
+          <div class="carousel-card">
+            <img src="/saint-pitch/assets/ref-brand-1.png" alt="Trap Midias" draggable="false" />
+            <div class="carousel-card-label">
+              <div class="carousel-card-name">Trap Midias</div>
+              <div class="carousel-card-followers">466K followers</div>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <img src="/saint-pitch/assets/ref-brand-2.png" alt="Style Magazines" draggable="false" />
+            <div class="carousel-card-label">
+              <div class="carousel-card-name">Style Magazines</div>
+              <div class="carousel-card-followers">68.6K followers</div>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <img src="/saint-pitch/assets/ref-brand-3.png" alt="Business Bulls" draggable="false" />
+            <div class="carousel-card-label">
+              <div class="carousel-card-name">Business Bulls</div>
+              <div class="carousel-card-followers">1.5M followers</div>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <img src="/saint-pitch/assets/ref-brand-4.png" alt="Hypebeast" draggable="false" />
+            <div class="carousel-card-label">
+              <div class="carousel-card-name">Hypebeast</div>
+              <div class="carousel-card-followers">10.4M followers</div>
+            </div>
+          </div>
+        </div>
+        <p class="carousel-hint">Swipe or drag →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 04 / PRODUCTION PHILOSOPHY ─────────────────── -->
+  <section id="philosophy" aria-labelledby="phil-heading">
+    <div class="container">
+      <p class="section-label reveal">04 / Production Philosophy</p>
+      <h2 class="phil-headline reveal" id="phil-heading">
+        Real first.<br/>AI amplifies.
+      </h2>
+      <p class="phil-sub reveal">The lens doesn't lie — and neither does the brand.</p>
+
+      <div class="phil-cols reveal">
+        <div class="phil-col">
+          <p class="phil-col-label">What AI can't fake</p>
+          <p>Wide shots, environmental context, authentic human movement in space — audiences feel artificiality immediately even if they can't name it. AI at distance breaks trust. For a brand built on real protection for real riders, that's not a risk worth taking.</p>
+        </div>
+        <div class="phil-col">
+          <p class="phil-col-label">How we actually use it</p>
+          <p>Shoot wide and fast on location — real model, real product, real environment. AI fills the production gaps: close-up detail shots, product texture, missing cutaways, the polish between frames. The finished edit looks like a full high-budget production. Nobody can tell where the shoot ended and the tool began.</p>
         </div>
       </div>
+
+      <div class="reveal">
+        <h3 class="phil-statement">
+          Saint is a real brand.<br/><span class="accent">The AI knows its place.</span>
+        </h3>
+        <p class="phil-body">
+          The goal is never AI content. The goal is content nobody questions. We use AI the same way a colour grade or a sound mix gets used — invisibly, in service of the real thing. The Saint community follows because it's real. We keep it that way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── 05 / WEEKLY STRUCTURE ─────────────────── -->
+  <section id="structure" aria-labelledby="structure-heading">
+    <div class="container">
+      <p class="section-label on-light reveal">05 / Weekly Structure</p>
+      <div class="structure-top reveal">
+        <h2 class="structure-headline" id="structure-heading">
+          Three tiers.<br/>One direction.
+        </h2>
+        <div class="structure-kpi" aria-hidden="true">
+          <div class="big">3</div>
+          <div class="label">Engagement Options</div>
+        </div>
+      </div>
+
+      <!-- Tier cards -->
+      <div class="tier-grid reveal">
+        <div class="tier-card">
+          <span class="tier-badge">Flexible entry</span>
+          <div class="tier-days">2 Days</div>
+          <div class="tier-hrs">16 hrs / week</div>
+          <p class="tier-desc">Shoot Day + one in-house production day. Focused output — ideal as a trial engagement or part-time arrangement to get product into market fast.</p>
+        </div>
+        <div class="tier-card recommended">
+          <span class="tier-badge">Core Structure</span>
+          <div class="tier-days">4 Days</div>
+          <div class="tier-hrs">32 hrs / week</div>
+          <p class="tier-desc">Planning, Stock &amp; Accounts, Edit &amp; AI Production, Shoot Day — all in-house or on location. Full creative coverage across both brands every week.</p>
+        </div>
+        <div class="tier-card">
+          <span class="tier-badge">Full-time</span>
+          <div class="tier-days">5 Days</div>
+          <div class="tier-hrs">40 hrs / week</div>
+          <p class="tier-desc">All four days above plus a fifth day: Review &amp; Strategy — performance reporting, campaign debriefs, forward planning, and stakeholder alignment.</p>
+        </div>
+      </div>
+
+      <!-- Day grid — Tier 2 core structure -->
       <div class="days-grid">
         <article class="day-card reveal">
           <span class="day-bg-num" aria-hidden="true">01</span>
@@ -1159,7 +1603,7 @@
             <li>Influencer / UGC outreach</li>
             <li>Platform analytics review</li>
           </ul>
-          <span class="day-badge">WFH if acceptable</span>
+          <span class="day-badge">In-house</span>
         </article>
         <article class="day-card reveal" style="transition-delay:.08s">
           <span class="day-bg-num" aria-hidden="true">02</span>
@@ -1204,10 +1648,10 @@
     </div>
   </section>
 
-  <!-- ─────────────────── YOUTUBE ─────────────────── -->
+  <!-- ─────────────────── 06 / YOUTUBE STRATEGIC CASE ─────────────────── -->
   <section id="youtube" aria-labelledby="yt-heading">
     <div class="container">
-      <p class="section-label reveal">04 / Strategic Case</p>
+      <p class="section-label reveal">06 / YouTube Strategic Case</p>
       <div class="yt-grid">
         <div class="yt-left reveal">
           <h2 class="yt-headline" id="yt-heading">
@@ -1233,17 +1677,77 @@
           </ul>
         </div>
       </div>
+
+      <!-- Data analytics block -->
+      <div class="yt-data-block reveal">
+        <p class="yt-data-insight">
+          <em>The moto niche pays. No apparel brand is collecting.</em>
+        </p>
+        <table class="yt-data-table" aria-label="YouTube moto channel revenue estimates">
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>Subscribers</th>
+              <th>Est. Monthly Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="yt-td-channel">FortNine</td>
+              <td class="yt-td-subs">2.3M</td>
+              <td class="yt-td-rev">$9,200 – $18,400</td>
+            </tr>
+            <tr>
+              <td class="yt-td-channel">RevZilla</td>
+              <td class="yt-td-subs">1.5M</td>
+              <td class="yt-td-rev">$6,000 – $12,000</td>
+            </tr>
+            <tr>
+              <td class="yt-td-channel">Yammie Noob</td>
+              <td class="yt-td-subs">1.34M</td>
+              <td class="yt-td-rev">$5,360 – $10,720</td>
+            </tr>
+            <tr>
+              <td class="yt-td-channel">ChaseonTwoWheels</td>
+              <td class="yt-td-subs">1.2M</td>
+              <td class="yt-td-rev">$4,800 – $9,600</td>
+            </tr>
+            <tr>
+              <td class="yt-td-channel">Max Wrist</td>
+              <td class="yt-td-subs">1.1M</td>
+              <td class="yt-td-rev">$4,400 – $8,800</td>
+            </tr>
+            <tr>
+              <td class="yt-td-channel">MCN</td>
+              <td class="yt-td-subs">300K</td>
+              <td class="yt-td-rev">$1,200 – $2,400</td>
+            </tr>
+            <tr class="saint-row">
+              <td class="yt-td-channel">
+                <span class="yt-projection-label">Saint — Projection</span>
+                50K → 500K subs
+              </td>
+              <td class="yt-td-subs">50K → 500K</td>
+              <td class="yt-td-rev">$200–$400/mo → $2,000–$4,000/mo</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="yt-data-close">
+          <em>Evergreen. Compounding. Zero ongoing ad spend.</em><br/>
+          Saint enters this space with a product story nobody else can tell — and zero competition at the top.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- ─────────────────── REFERENCES ─────────────────── -->
+  <!-- ─────────────────── 07 / WORK REFERENCES ─────────────────── -->
   <section id="references" aria-labelledby="ref-heading">
     <div class="container">
       <div class="ref-top reveal">
         <h2 class="ref-headline" id="ref-heading">Work<br/>References</h2>
         <span class="ref-count" aria-hidden="true">05</span>
       </div>
-      <p class="section-label reveal" style="margin-bottom:32px">05 / Past Work</p>
+      <p class="section-label reveal" style="margin-bottom:32px">07 / Past Work</p>
       <div class="ref-list reveal" role="list" aria-label="Work references">
 
         <div class="ref-item" role="listitem" tabindex="0"
@@ -1305,32 +1809,44 @@
     </div>
   </section>
 
-  <!-- ─────────────────── ENGAGEMENT ─────────────────── -->
+  <!-- ─────────────────── 08 / ENGAGEMENT ─────────────────── -->
   <section id="engagement" aria-labelledby="eng-heading">
     <div class="container">
       <div class="eng-grid">
         <div class="reveal">
           <p class="eng-eyebrow">Proposed Engagement</p>
-          <h2 class="eng-headline" id="eng-heading">32 Hours<br/>/ Week</h2>
+          <h2 class="eng-headline" id="eng-heading">Flexible.<br/>From day one.</h2>
           <p class="eng-detail">
-            4 days &nbsp;·&nbsp; 3 days in-house &nbsp;·&nbsp; 1 day WFH (Day 01 — Planning)<br/>
-            Flexible to business schedule and shoot requirements
+            Three structured tiers — start where it makes sense, scale when it does.
+            All in-house or on location. Flexible to business schedule and shoot requirements.
           </p>
-          <div class="eng-calc reveal">
-            <div class="calc-row total">
-              <span class="calc-label">Per week inc. super</span>
-              <span class="calc-val">$1,500 / wk</span>
+
+          <!-- Three-tier rate cards -->
+          <div class="eng-tiers">
+            <div class="eng-tier">
+              <div class="eng-tier-days">2 Days</div>
+              <div class="eng-tier-hrs">16 hrs / week</div>
+              <div class="eng-tier-weekly">$750 / wk inc. super</div>
+              <div class="eng-tier-after-tax">~$598 / wk after tax</div>
+              <div class="eng-tier-hourly">$46.88 / hr</div>
             </div>
-            <div class="calc-row">
-              <span class="calc-label">Per week inc. tax &amp; super</span>
-              <span class="calc-val">~ $1,198 / wk</span>
+            <div class="eng-tier highlighted">
+              <div class="eng-tier-days">4 Days</div>
+              <div class="eng-tier-hrs">32 hrs / week</div>
+              <div class="eng-tier-weekly">$1,500 / wk inc. super</div>
+              <div class="eng-tier-after-tax">~$1,198 / wk after tax</div>
+              <div class="eng-tier-hourly">$46.88 / hr</div>
             </div>
-            <div class="calc-row highlight">
-              <span class="calc-label">Hourly &nbsp;($1,500 ÷ 32 hrs)</span>
-              <span class="calc-val">$46.88 / hr</span>
+            <div class="eng-tier">
+              <div class="eng-tier-days">5 Days</div>
+              <div class="eng-tier-hrs">40 hrs / week</div>
+              <div class="eng-tier-weekly">$1,875 / wk inc. super</div>
+              <div class="eng-tier-after-tax">~$1,498 / wk after tax</div>
+              <div class="eng-tier-hourly">$46.88 / hr</div>
             </div>
           </div>
         </div>
+
         <div class="presenter reveal" style="transition-delay:.1s">
           <h3 class="presenter-name">Jordan<br/>Toia</h3>
           <p class="presenter-role">Director · Cinematographer · Editor</p>
@@ -1394,25 +1910,37 @@
     function closeModal() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
-      // Delay src clear so iframe doesn't flash blank during close animation
       setTimeout(() => { iframe.src = ''; }, 320);
     }
 
-    // Click on ref items
     document.querySelectorAll('.ref-item[data-embed]').forEach(item => {
       const activate = () => openModal(item.dataset.embed, item.dataset.type);
       item.addEventListener('click', activate);
       item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
     });
 
-    // Close button
     closeBtn.addEventListener('click', closeModal);
-
-    // Click outside modal box
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-
-    // Escape key
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+    // ── Carousel drag-scroll ──
+    const track = document.getElementById('carousel');
+    let isDown = false, startX, scrollLeft;
+
+    track.addEventListener('mousedown', e => {
+      isDown = true;
+      track.classList.add('dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+    track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
+    track.addEventListener('mouseup',    () => { isDown = false; track.classList.remove('dragging'); });
+    track.addEventListener('mousemove',  e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX) * 1.4;
+    });
   </script>
 
   <!-- ═══ PASSKEY GATE ══════════════════════════════════════════════════════ -->
@@ -1491,7 +2019,6 @@
       const wrap = document.getElementById('gateInputs');
       const inputs = Array.from(wrap.querySelectorAll('input'));
 
-      // Focus first on load
       setTimeout(() => inputs[0].focus(), 200);
 
       inputs.forEach((inp, i) => {
@@ -1501,12 +2028,10 @@
           }
         });
         inp.addEventListener('input', function () {
-          // Strip non-numeric
           inp.value = inp.value.replace(/[^0-9]/g, '').slice(-1);
           if (inp.value && i < inputs.length - 1) {
             inputs[i + 1].focus();
           }
-          // Check when last digit filled
           if (i === inputs.length - 1 && inputs.every(x => x.value)) {
             checkCode();
           }
