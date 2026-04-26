@@ -292,7 +292,7 @@ function Header() {
             <a
               href="/saint-pitch/"
               data-cursor="VIEW"
-              className="hidden md:flex items-center px-4 py-1.5 md:px-5 md:py-2 rounded-full border border-avo-border text-avo-dim hover:border-avo-flesh/50 hover:text-avo-cream text-xs font-body font-600 tracking-[0.12em] uppercase transition-colors duration-300 whitespace-nowrap"
+              className="flex items-center px-3 py-1.5 md:px-5 md:py-2 rounded-full border border-avo-border text-avo-dim hover:border-avo-flesh/50 hover:text-avo-cream text-xs font-body font-600 tracking-[0.12em] uppercase transition-colors duration-300 whitespace-nowrap"
             >
               Sa1nt Pitch
             </a>
