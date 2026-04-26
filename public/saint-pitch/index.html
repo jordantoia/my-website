@@ -311,11 +311,28 @@
       font-size: 9.5px; font-weight: 600; letter-spacing: 0.32em;
       text-transform: uppercase; color: var(--orange); margin-bottom: 18px;
     }
-    .ig-embed-wrap {
-      border: 1px solid var(--border-dark); background: var(--dark-2);
-      overflow: hidden; max-width: 400px; margin: 0 auto; aspect-ratio: 4/5;
+    .ig-static-wrap {
+      display: block; position: relative; overflow: hidden;
+      max-width: 860px; margin: 0 auto;
+      border: 1px solid var(--border-dark);
+      cursor: pointer;
     }
-    .ig-embed-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+    .ig-static-img { width: 100%; display: block; }
+    .ig-static-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0); display: flex;
+      align-items: flex-end; justify-content: flex-end;
+      padding: 18px 20px;
+      transition: background 0.3s ease;
+    }
+    .ig-static-wrap:hover .ig-static-overlay { background: rgba(0,0,0,0.35); }
+    .ig-static-handle {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--orange);
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .ig-static-wrap:hover .ig-static-handle { opacity: 1; transform: none; }
     .ig-caption { font-size: 11.5px; color: rgba(255,255,255,0.28); letter-spacing: 0.04em; margin-top: 12px; line-height: 1.6; }
 
     .carousel-section { }
@@ -955,13 +972,12 @@
 
       <div class="ig-block reveal">
         <p class="ig-block-label">Sa1nt — Content Mock-ups</p>
-        <a href="https://www.instagram.com/pitch.sa1nt/" target="_blank" rel="noopener noreferrer" class="ig-embed-wrap" title="View @pitch.sa1nt on Instagram">
-          <iframe
-            src="https://www.instagram.com/pitch.sa1nt/embed"
-            scrolling="no" allowtransparency="true" frameborder="0" loading="lazy"
-          ></iframe>
+        <a href="https://www.instagram.com/pitch.sa1nt/" target="_blank" rel="noopener noreferrer" class="ig-static-wrap" title="View @pitch.sa1nt on Instagram" aria-label="Open @pitch.sa1nt on Instagram">
+          <img src="/saint-pitch/assets/ig-feed-preview.jpg" alt="@pitch.sa1nt — Sa1nt content mock-ups on Instagram" class="ig-static-img" />
+          <div class="ig-static-overlay">
+            <span class="ig-static-handle">@pitch.sa1nt ↗</span>
+          </div>
         </a>
-        <p class="ig-caption">Structured content identity across Sa1nt Layers and Sa1nt Unbreakable. <a href="https://www.instagram.com/pitch.sa1nt/" target="_blank" rel="noopener noreferrer" style="color:var(--orange);text-decoration:none;">View @pitch.sa1nt ↗</a></p>
       </div>
 
       <div class="carousel-section reveal">
