@@ -422,7 +422,8 @@
     }
     /* YouTube Shorts — vertical 9:16 */
     .modal-box.portrait {
-      height: min(88vh, 900px);
+      height: min(88vh, 900px) !important;
+      max-height: none !important;
       width: calc(min(88vh, 900px) * 9 / 16);
       max-width: 92vw;
       aspect-ratio: 9 / 16;
