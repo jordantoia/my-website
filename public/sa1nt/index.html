@@ -543,9 +543,9 @@
        CONFIG — edit these
     ════════════════════════════════════════════ */
 
-    // CDN base — leave empty for relative paths (works on localhost AND when
-    // mounted at any sub-path on jordantoia.com via Vercel)
-    const CDN_BASE = '';
+    // CDN base — absolute path so images resolve correctly regardless of
+    // trailing-slash behaviour in Next.js / Vercel routing
+    const CDN_BASE = '/sa1nt/';
 
     // Access code
     const PASSKEY = 'Harry';
